@@ -1,9 +1,9 @@
 # api rest full - ThéTipTop
-_(juste en dessous des badges sympatiques à placer)_
+_(des badges sympatiques)_
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-crayons.svg)](http://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/powered-by-electricity.svg)](https://forthebadge.com) 
 
-Une petite description du projet
+
 
 ## Pour commencer
 
@@ -13,7 +13,7 @@ Pour bien débuter avec le projet veuillez mettre à jour votre poste de travail
 
 Ce qu'il est requis pour commencer le projet...
 
-- intaller nodejs
+- installer nodejs
 - installer un editeur de texte [(vscode)](https://code.visualstudio.com/)
 - clone le repo
 ### Optionnel
