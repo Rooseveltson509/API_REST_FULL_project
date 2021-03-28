@@ -50,13 +50,11 @@ _exemple :_
 Liste des versions : [Cliquer pour afficher](https://github.com/your/project-name/tags)
 _(pour le lien mettez simplement l'URL de votre projets suivi de ``/tags``)_
 
-## Auteurs
+## Auteurs et documentation
 Listez le(s) auteur(s) du projet ici !
-* **Jhon doe** _alias_ [@outout14](https://github.com/outout14)
+* **Rooseveltson**
 
-Lisez la liste des [contributeurs](https://github.com/your/project/contributors) pour voir qui à aidé au projet !
-
-_(pour le lien mettez simplement l'URL de votre projet suivi de ``/contirubors``)_
+Lisez la doc et tester les urls de l'api [Api-doc](http://localhost:3000/api/v1/api-docs/)
 
 ## License
 
