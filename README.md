@@ -19,18 +19,17 @@ Ce qu'il est requis pour commencer le projet...
 
 ### Installation
 
-Les étapes pour installer votre programme....
+Les étapes pour installer votre programme,se positionner dans le dossier du projet.
 
-Dites ce qu'il faut faire...
+Lancer les command suivantes:
+1- installation des packages: Executez la commande ``npm install`` pour commencer ensuite [...]
 
-_exemple_: Executez la commande ``telnet mapscii.me`` pour commencer ensuite [...]
-
-
-Ensuite vous pouvez montrer ce que vous obtenez au final...
+Ensuite vous pouvez lancer le projet.
 
 ## Démarrage
 
-Dites comment faire pour lancer votre projet
+Lancer le projet en executant la commande suivante:
+``npm start`
 
 ## Fabriqué avec
 
