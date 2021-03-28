@@ -37,5 +37,5 @@ Listez le(s) auteur(s) du projet ici !
 * **Rooseveltson**
 
 Lisez la doc et tester les urls de l'api [Api-doc](http://localhost:3000/api/v1/api-docs/)
-[Ma page personnelle](https://lacherez.info){:target="_blank" }
+
 
