@@ -21,9 +21,11 @@ Ce qu'il est requis pour commencer le projet...
 
 Se positionner dans le dossier du projet.
 
-Lancer les command suivantes:
+```sh
+cd project_name
 
-Executez la commande ``npm install`` pour commencer ensuite [...]
+npm i
+```
 
 ## Démarrage
 
