@@ -38,6 +38,3 @@ Listez le(s) auteur(s) du projet ici !
 
 Lisez la doc et tester les urls de l'api [Api-doc](http://localhost:3000/api/v1/api-docs/)
 
-Read here: [Some other wiki page](path/to/some-other-wiki-page)
-
-
