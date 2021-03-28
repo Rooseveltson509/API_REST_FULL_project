@@ -22,6 +22,7 @@ Ce qu'il est requis pour commencer le projet...
 Les étapes pour installer votre programme,se positionner dans le dossier du projet.
 
 Lancer les command suivantes:
+
 1- installation des packages: Executez la commande ``npm install`` pour commencer ensuite [...]
 
 Ensuite vous pouvez lancer le projet.
