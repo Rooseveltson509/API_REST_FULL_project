@@ -14,8 +14,10 @@ Pour bien débuter avec le projet veuillez mettre à jour votre poste de travail
 Ce qu'il est requis pour commencer le projet...
 
 - intaller nodejs
-- installer un editeur de texte (vscode)
+- installer un editeur de texte [(vscode)](https://code.visualstudio.com/)
 - clone le repo
+### Optionnel
+- installer [POSTMAN](https://www.postman.com/downloads/) pour pouvoir tester [l'API](http://localhost:3000/api/v1/api-docs/)
 
 ### Installation
 
