@@ -7,11 +7,11 @@ Une petite description du projet
 
 ## Pour commencer
 
-Entrez ici les instructions pour bien débuter avec votre projet...
+Pour bien débuter avec le projet veuillez mettre à jour votre poste de travail.
 
 ### Pré-requis
 
-Ce qu'il est requis pour commencer avec votre projet...
+Ce qu'il est requis pour commencer le projet...
 
 - intaller nodejs
 - installer un editeur de texte (vscode)
