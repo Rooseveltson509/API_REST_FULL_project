@@ -13,7 +13,7 @@ Pour bien débuter avec le projet veuillez mettre à jour votre poste de travail
 
 Ce qu'il est requis pour commencer le projet...
 
-- installer nodejs
+- installer [NODEJS](https://nodejs.org/en/)
 - installer un editeur de texte [(vscode)](https://code.visualstudio.com/)
 - clone le repo
 ### Optionnel
