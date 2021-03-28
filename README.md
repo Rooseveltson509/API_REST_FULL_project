@@ -25,12 +25,10 @@ Lancer les command suivantes:
 
 1- installation des packages: Executez la commande ``npm install`` pour commencer ensuite [...]
 
-Ensuite vous pouvez lancer le projet.
-
 ## Démarrage
 
 Lancer le projet en executant la commande suivante:
-``npm start`
+``npm start``
 
 ## Fabriqué avec
 
