@@ -37,8 +37,5 @@ Listez le(s) auteur(s) du projet ici !
 * **Rooseveltson**
 
 Lisez la doc et tester les urls de l'api [Api-doc](http://localhost:3000/api/v1/api-docs/)
-
-## License
-
-Ce projet est sous licence ``exemple: WTFTPL`` - voir le fichier [LICENSE.md](LICENSE.md) pour plus d'informations
+[Ma page personnelle](https://lacherez.info){:target="_blank" }
 
