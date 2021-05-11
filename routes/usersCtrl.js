@@ -393,7 +393,7 @@ module.exports = {
 
                 }).then(function(user2) {
                     if (user2) {
-                        res.status(201).json(user2);
+                        res.status(200).json(user2);
                     }
                 }).catch(function(err) {
                     res.status(500).json({ 'error': 'cannot fetch user' });
