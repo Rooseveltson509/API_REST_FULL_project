@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-md p-4 navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="">
+      <img class="img-fluid" src="assets/img/logo-noir.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-dark"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item ml-2 d-md-none">
+          <a class="my-auto nav-link text-dark ml-2" routerLink="/emp_home">Recherche gain</a>
+        </li>
+        <li class="nav-item ml-2 d-md-none">
+          <a class="my-auto nav-link text-dark ml-2" routerLink="/emp_store">Mon magasin</a>
+        </li>
+        <li class="nav-item ml-2 d-md-none">
+          <a class="my-auto nav-link text-dark ml-2" (click)="seDeconnecter()">Deconnexion</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

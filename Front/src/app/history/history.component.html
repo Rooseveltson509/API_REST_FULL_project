@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class = "t-2 mb-4 text-lg-left text-center">Vos précédents gains :</div>
+  <!-- <table class="table align-middle pa-1" *ngIf="tickets$ | async as tickets"> -->
+  <div class="table-responsive-sm">
+    <table class="table pa-1" *ngIf="tickets$ | async as tickets">
+      <thead class="table-borderless">
+        <tr>
+          <td></td>
+          <td class="produit " scope="col">Produit</td>
+          <td scope="col">Lien boutique en ligne</td>
+          <td scope="col">Code</td>
+          <!-- <td scope="col">Status</td> -->
+          <td scope="col">Gagné le</td>
+          <td scope="col">Récupéré le</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="" *ngFor="let ticket of tickets">
+          <td class="img">
+            <img src="{{imgSrcInfuseur}}" class="" *ngIf = "ticket.gain=='infuseur à thé'">
+            <img src="{{imgSrcThe1}}" class="" *ngIf = "ticket.gain=='une boite de 100g d’un thé détox ou d’infusion'">
+            <img src="{{imgSrcThe2}}" class="" *ngIf = "ticket.gain=='une boite de 100g d’un thé signature'">
+            <img src="{{imgSrcCoffret1}}" class="" *ngIf = "ticket.gain=='un coffret découverte d’une valeur de 39€'">
+            <img src="{{imgSrcCoffret2}}" class="" *ngIf = "ticket.gain=='un coffret découverte d’une valeur de 69€'">
+          </td>
+          <td class="produit align-middle">{{ ticket.gain }}</td>
+          <td class="align-middle"><a class="a-1" href=''>Voir Le produit</a></td>
+          <td class="align-middle">{{ ticket.code}}</td>
+          <!-- <td class="align-middle">
+            <p *ngIf="ticket.etat=='valide'">Gain reçu</p>
+            <p *ngIf="ticket.etat=='distribue'">Validé</p>
+          </td> -->
+          <td class="align-middle">{{this.toDate(ticket.createdAt)}}</td>
+          <td class="align-middle">{{this.toDate(ticket.validateAt)}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

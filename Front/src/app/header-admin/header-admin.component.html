@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md p-4 navbar-light">
+  <div class="container">
+    <a class="navbar-brand" href="">
+      <img class="img-fluid" src="assets/img/logo-noir.png">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon text-dark"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item ml-2 d-md-none">
+          <a class="my-auto nav-link text-dark ml-2" routerLink="/history">Voir les statistique</a>
+        </li>
+        <li class="nav-item ml-2 d-md-none">
+          <a class="my-auto nav-link text-dark ml-2" routerLink="/admin_new_emp">Créer un compte employé</a>
+        </li>
+        <li class="nav-item ml-2 d-md-none">
+          <a class="my-auto nav-link text-dark ml-2" routerLink="/admin_list_emp">Gérer les comptes employés</a>
+        </li>
+        <li class="nav-item ml-2 d-md-none">
+          <a class="my-auto nav-link text-dark ml-2" routerLink="/admin_list_users">Gérer les comptes utilisateurs</a>
+        </li>
+        <li class="nav-item ml-2 d-md-none">
+          <a class="nav-link text-dark underline-hover" (click)="seDeconnecter()">Déconnexion</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

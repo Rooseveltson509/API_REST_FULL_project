@@ -1,0 +1,199 @@
+
+
+
+
+
+
+<app-header-client></app-header-client>
+<div class="row brd-top-1 brd-btm-1 no-gutters" *ngIf="user$ | async as user">
+  <div class="d-md-block d-none col-md-3 col-lg-2">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col col-md-9 col-lg-10 no-gutters">
+    <div class="row no-gutters">
+      <div class="col-12 col-lg-6 no-gutters">
+        <form class="w mx-auto" [formGroup]="formInfos" (ngSubmit)="submitInfos()">
+          <p class="t-1">Mes informations générales</p>
+          <!-- <select class="w-100 mb-3" name="gendre" required [ngModel]="user.gender">
+            <option value="Choice">Civilité *</option>
+            <option value="Mr">Monsieur</option>
+            <option value="Mme">Madame</option>
+          </select> -->
+          <!-- <div class="mb-3">
+              <select
+                  formControlName="gender"
+                  class="w-100"
+                  id="gender"
+                  type="text"
+                  [ngClass]="{'invalid-input' : f.gender.touched && f.gender.invalid}"
+                  required>
+                  <option value="" selected hidden disabled>Civilité *</option>
+                  <option value="monsieur">Monsieur</option>
+                  <option value="madame">Madame</option>
+              </select>
+              <div *ngIf="f.gender.touched && f.gender.invalid" class="pa-3 mt-1 ml-2">
+                  <div *ngIf="f.gender.errors.required">Veuillez sélectionner votre gendre</div>
+              </div>
+          </div> -->
+
+          <div class="mb-3">
+              <input
+                  formControlName="lastName"
+                  class="w-100"
+                  id="lastName"
+                  type="text"
+                  placeholder="Nom *"
+                  [ngModel]="user.last_name"
+                  [ngClass]="{'invalid-input' : fInfos.lastName.touched && fInfos.lastName.invalid}">
+              <div *ngIf="fInfos.lastName.touched && fInfos.lastName.invalid" class="pa-3 mt-1 ml-2">
+                  <div *ngIf="fInfos.lastName.errors.required">Le nom est obligatoire</div>
+                  <div *ngIf="fInfos.lastName.errors.minlength">Le nom doit contenir 4 caratères minimum</div>
+                  <div *ngIf="fInfos.lastName.errors.maxlength">Le nom doit contenir 50 caratères maximum</div>
+              </div>
+          </div>
+
+          <div class="mb-3">
+              <input
+                  formControlName="firstName"
+                  class="w-100"
+                  id="firstName"
+                  type="text"
+                  placeholder="Prenom *"
+                  [ngModel]="user.first_name"
+                  [ngClass]="{'invalid-input' : fInfos.firstName.touched && fInfos.firstName.invalid}">
+              <div *ngIf="fInfos.firstName.touched && fInfos.firstName.invalid" class="pa-3 mt-1 ml-2">
+                  <div *ngIf="fInfos.firstName.errors.required">Le prénom est obligatoire</div>
+                  <div *ngIf="fInfos.firstName.errors.minlength">Le prénom doit contenir 4 caratères minimum</div>
+                  <div *ngIf="fInfos.firstName.errors.maxlength">Le prénom doit contenir 50 caratères maximum</div>
+              </div>
+          </div>
+          <!-- <div class="mb-3">
+              <input
+                  formControlName="email"
+                  class="w-100"
+                  id="email"
+                  type="email"
+                  placeholder="Email *"
+                  [ngClass]="{'invalid-input' : f.email.touched && f.email.invalid}">
+              <div *ngIf="f.email.touched && f.email.invalid" class="pa-3 mt-1 ml-2">
+                  <div *ngIf="f.email.errors.required">L'email est obligatoire</div>
+                  <div *ngIf="f.email.errors.email">Veuillez entrer une adresse email valide</div>
+              </div>
+          </div> -->
+          <div class="mb-3">
+              <input
+                  formControlName="phone"
+                  class="w-100"
+                  id="phone"
+                  type="phone"
+                  placeholder="Phone"
+                  [ngModel]="user.phoneNumber"
+                  [ngClass]="{'invalid-input' : fInfos.phone.touched && fInfos.phone.invalid}">
+              <div *ngIf="fInfos.phone.touched && fInfos.phone.invalid" class="pa-3 mt-1 ml-2">
+                  <div *ngIf="fInfos.phone.invalid">Le numéro de téléphone est invalide</div>
+              </div>
+          </div>
+          <div class="mb-3">
+              <input
+                  formControlName="address"
+                  id="address"
+                  class="w-100"
+                  type="text"
+                  placeholder="Adresse *"
+                  [ngModel]="user.address"
+                  [ngClass]="{'invalid-input' : fInfos.address.touched && fInfos.address.invalid }">
+              <div *ngIf="fInfos.address.touched && fInfos.address.invalid" class="pa-3 mt-1 ml-2">
+                  <div *ngIf="fInfos.address.errors.required">Ce champs est obligatoire</div>
+              </div>
+          </div>
+          <div class="row no-gutters mb-3">
+            <div class="col g-1">
+              <div class="mb-3">
+                  <input
+                      formControlName="zip"
+                      id="zip"
+                      class="w-100"
+                      type="text"
+                      placeholder="Code postale *"
+                      [ngModel]="user.zipCode"
+                      [ngClass]="{'invalid-input' : fInfos.zip.touched && fInfos.zip.invalid }">
+                  <div *ngIf="fInfos.zip.touched && fInfos.zip.invalid" class="pa-3 mt-1">
+                      <div *ngIf="fInfos.zip.errors.required">Ce champs est obligatoire</div>
+                  </div>
+              </div>
+            </div>
+            <div class="col g-1">
+              <div class="mb-3">
+                  <input
+                      formControlName="city"
+                      id="city"
+                      class="w-100"
+                      type="text"
+                      placeholder="Ville *"
+                      [ngModel]="user.city"
+                      [ngClass]="{'invalid-input' : fInfos.city.touched && fInfos.city.invalid }">
+                  <div *ngIf="fInfos.city.touched && fInfos.city.invalid" class="pa-3 mt-1 ">
+                      <div *ngIf="fInfos.city.errors.required">Ce champs est obligatoire</div>
+                  </div>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" [disabled]="formInfos.invalid" class="btn-2 mb-4" >Enregister les modifications</button>
+          <p class="pa-2 mb-5">
+            Utilisation de vos données personnelles : <br>
+            Les données personnelles communiquées lors de la création de votre compte ou par la suite à l’occasion de l’utilisation de nos produits et services sont destinées à TheTipTop.  Elles seront utilisées pour : <br>
+            - 	Vous fournir les services demandés, <br>
+            -	Nous permettre de comprendre vos besoins et préférences, afin de poursuivre notre intérêt légitime d’établir votre profil de client pour vous adresser des offres que nous estimons susceptibles de vous intéresser, effectuer des analyses et statistiques commerciales pour organiser des activités promotionnelles et des concours, <br>
+            -	Afficher dans le respect de vos choix en matière de cookies de la publicité ciblée sur notre site ainsi que sur d’autres sites. <br>
+            Pour connaître nos pratiques en matière de collecte, utilisation et communication de vos données personnelles, exercer vos droits, d’accès, de rectification et de suppression, modifier vos options en matière de prospection commerciale ou organiser le sort de vos données post-mortem, et connaître les autres droits dont vous disposez, veuillez lire notre Charte protection des données et cookies. <br>
+          <p>
+        </form>
+      </div>
+      <div class="col-12 col-lg-6 no-gutters brd-left-1">
+        <!-- <form class= "w mx-auto" (ngSubmit)="onSubmitEmail(fEmail)" #fEmail='ngForm'>
+          <p class="t-1">Mon adresse email</p>
+          <p class="pa-1">Connectez-vous pour connaître vos gains ou voir la liste de ce que vous avez déjà remporté. </p>
+          <input type="email" class="w-100 mb-3" id="email" name="email" placeholder="Nouvelle adresse mail" aria-describedby="emailHelp" ngModel required>
+          <input type="password" class="w-100 mb-3" id="password" name ="password" placeholder="Mot de passe *" ngModel required>
+          <p class="" *ngIf="passwordIncorrect">Email ou mot de passe incorrect !  </p>
+          <button type="submit" class="btn-2" [disabled]="fEmail.invalid">Valider</button>
+        </form> -->
+
+        <form class= "w mx-auto" [formGroup]="formPassword" (ngSubmit)="submitPassword()">
+          <p class="t-1">Mon mot de passe</p>
+          <!-- <input type="password" class="w-100 mb-3" id="oldPassword" name="oldPassword" placeholder="Mot de passe actuel" aria-describedby="passwordHelp" ngModel required> -->
+          <div class="mb-3">
+              <input
+                  formControlName="password"
+                  id="password"
+                  class="w-100"
+                  type="password"
+                  placeholder="Mot de passe *"
+                  [ngClass]="{'invalid-input' : fPassword.password.touched && fPassword.password.invalid }">
+              <div *ngIf="fPassword.password.touched && fPassword.password.invalid" class="pa-3 mt-1 ml-2">
+                  <div *ngIf="fPassword.password.errors.required">Le mot de passe est obligatoire</div>
+                  <div *ngIf="fPassword.password.invalid">Le mot de passe doit contenir 8 charactères minimum : 1 lettre, 1 chiffre et 1 charactère spécial </div>
+              </div>
+          </div>
+          <div class="mb-3">
+              <input
+                  formControlName="confPassword"
+                  id="confPassword"
+                  class="w-100"
+                  type="password"
+                  placeholder="Confirmation du mot de passe *"
+                  [ngClass]="{'invalid-input' : fPassword.confPassword.touched && fPassword.confPassword.invalid }">
+              <div *ngIf="fPassword.confPassword.touched && fPassword.confPassword.invalid" class="pa-3 mt-1 ml-2">
+                  <div *ngIf="fPassword.confPassword.errors.required">Veuillez confirmer le mot de passe</div>
+                  <div *ngIf="fPassword.confPassword.errors.mustMatch">Les deux mots de passe ne sont pas identiques</div>
+              </div>
+          </div>
+          <button type="submit" [disabled]="formPassword.invalid" class="btn-2 mb-5" >Valider</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<app-re-connect *ngIf="!user$"></app-re-connect>
+<app-footer></app-footer>

@@ -1,0 +1,32 @@
+.w{
+  width: 40%;
+}
+.a-1{
+  margin-left: auto;
+}
+@media (max-width: 960px){
+  .w{
+    width: 50%;
+  }
+}
+
+@media (max-width: 720px){
+  .w{
+    width: 65%;
+  }
+}
+
+@media (max-width: 540px){
+  .w{
+    width: 90%;
+  }
+  .btn-2{
+    width: 90%;
+  }
+  .a-1{
+    margin: auto;
+  }
+}
+form{
+  margin-top: 60px;
+}
