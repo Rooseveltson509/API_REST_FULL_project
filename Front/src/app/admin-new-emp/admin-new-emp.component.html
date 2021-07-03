@@ -1,0 +1,37 @@
+<app-header-admin></app-header-admin>
+<div class="row no-gutters brd-top-1 brd-btm-1">
+  <div class="d-md-block d-none col-md-3 col-lg-3">
+    <app-sidebar-admin></app-sidebar-admin>
+  </div>
+
+  <div class="col-12 col-md-9 col-lg-9 no-gutters p-5 pt-4">
+    <div class="mb-4">
+      Retour à la liste des employé : <a class="a-1" routerLink="/admin_list_emp"> cliquer ici </a>
+    </div>
+    <form class="" (ngSubmit)="onSubmit(f)" #f='ngForm'>
+      <p class="t-1">Créer un nouveau compte employé</p>
+      <input type="text" class="col-12 col-md-10 col-lg-8 col-xl-7 mb-3" id="lastName" name="lastName" placeholder ="Nom *"  ngModel required><br>
+      <input type="text" class="col-12 col-md-10 col-lg-8 col-xl-7 mb-3" id="firstName" name="firstName" placeholder ="Prénom *" ngModel required><br>
+      <input type="email" class="col-12 col-md-10 col-lg-8 col-xl-7 mb-3" id="email" name="email" placeholder="Email *" ngModel required><br>
+      <input type="password" class="col-12 col-md-10 col-lg-8 col-xl-7 mb-3" id="password" name="password" placeholder="Mot de passe *" ngModel required><br>
+      <input type="password" class="col-12 col-md-10 col-lg-8 col-xl-7 mb-3" id="confPassword" name="confPassword" placeholder="Confirmation de mot de passe *" ngModel required><br>
+      <select class="col-12 col-md-10 col-lg-8 col-xl-7 mb-3" name="store" [ngModel]="defaultStore"><br>
+        <option value="Paris">Paris</option>
+        <option value="Nice">Nice</option>
+      </select>
+      <br>
+      <button type="submit" class="btn-2 mb-5" [disabled]="f.invalid">Créer mon compte</button>
+    </form>
+    <!-- <div class="w-50 mx-auto  text-align-center p-5 mt-5 bg-clr-2" *ngIf="confirmationCreateEmployeMsg" >
+      <p class="clr-1">Le compte  employe a bien été créé</p>
+      <div class="">
+        <button class ="btn-4 px-4 mr-2" (click)="conf()">
+          <svg>
+            <rect x="0" y="0" fill="none" width="100%" height="100%"></rect>
+          </svg>
+          ok
+        </button>
+      </div>
+    </div> -->
+  </div>
+</div>
