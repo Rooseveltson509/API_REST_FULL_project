@@ -18,8 +18,8 @@ export interface Stat {
 export class AdminHomeComponent implements OnInit {
 
   @Input() users$ : Observable<User>;
-  stat : [];
-  stat3 :[];
+  stat : any ;
+  stat3 : any ;
   constructor(
     private httpClient : HttpClient
   ) { }
