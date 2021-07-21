@@ -1,0 +1,65 @@
+<app-header-client></app-header-client>
+<div class="row no-gutters brd-top-1 brd-btm-1">
+  <div class="d-md-block d-none col-md-3 col-lg-2">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="col-12 col-md-9 col-lg-10 no-gutters">
+    <div class="m-3 mt-5" *ngIf="user$ | async as user">
+      <div class="d-felx text-lg-left text-center">
+        <p class="t-1 mx-auto">Bonjour {{user.last_name}}, bienvenue dans votre espace client.</p>
+      </div>
+      <!-- <div class="d-felx">
+        <form class="mx-auto" (ngSubmit)="onSubmit(f)" #f='ngForm'>
+          <p class="pa-1 text-lg-left text-center">Renseigner votre nouveau code de 10 chiffres :</p>
+          <div class="text-lg-left text-center">
+            <input type="code" class="w-50 mr-2" id="code" name="code" aria-describedby="codeHelp" ngModel required>
+            <button type="submit" class="btn-2 cursor-pointer" [disabled]="f.invalid">Valider</button>
+          </div>
+        </form>
+      </div> -->
+    </div>
+
+    <!-- <div class="d-lg-block d-none">
+      <div class="m-5 no-gutters row">
+        <div class="col-3">
+          <div class="pa-1">Votre code</div>
+          <div class="t-2">
+            0564754290
+          </div>
+        </div>
+        <div class="col-4">
+          <p class="pa-1 d-block ">Votre gain</p>
+          <div class="d-flex">
+            <img src="../assets/images/coffret-1.png" class="img">
+          </div>
+        </div>
+        <div class="col-5 pl-5 d-flex flex-column">
+          <p class=" d-block clr-1">Votre gaind</p>
+          <p class = "pa-1">Valeur du gain 69€</p>
+          <p class="t-1">Coffret découverte Signatures</p>
+          <p class= "pa-2">Toutes les saveurs de nos thés signatures réunies
+            en un seul coffret découverte. </p>
+          <a class="nav-link text-dark underline-hover p-0 mt-auto" href="#">Voir le produit </a>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="d-block d-lg-none ">
+      <div class="d-flex"><div class = "d-flex flex-collumn mx-auto text-align-center">Votre code : <h5>&nbsp; 0564754290</h5></div></div>
+      <div class="d-flex"><p class="t-1 mx-auto text-align-center">Coffret découverte Signatures</p></div>
+      <div class="d-flex mb-3">
+        <img src="../assets/images/coffret-1.png" class="w-75 mx-auto">
+      </div>
+      <div class="d-flex"><p class = "pa-1 mx-auto text-align-center">Valeur du gain 69€</p></div>
+      <div class="d-flex"><p class= "pa-2 mx-auto text-align-center">Toutes les saveurs de nos thés signatures réunies
+        en un seul coffret découverte. </p></div>
+      <div class="d-flex"><a class="nav-link text-dark underline-hover p-0 mx-auto" href="#">Voir le produit </a></div>
+    </div> -->
+
+
+    <div class="mt-2 mb-3 pt-5" style="overflow-x:auto;">
+      <app-history></app-history>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

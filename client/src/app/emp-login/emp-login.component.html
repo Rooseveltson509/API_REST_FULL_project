@@ -1,0 +1,18 @@
+<app-header></app-header>
+<div class="brd-top-1 brd-btm-1">
+  <form class= "w mx-auto" (ngSubmit)="onSubmit(f)" #f='ngForm'>
+      <p class="t-1 mb-4">Se connecter</p>
+      <div class="d-flex" *ngIf="incorrect">
+        <p class="pa-1 red" >L’adresse email et/ou le mot de passe
+          sont incorrects, veuillez-les corriger ou créer un compte.  </p>
+      </div>
+      <p class="pa-1">Saisir l'identifiant et le mot de passe pour accéder à votre espace employé</p>
+      <input type="email" class="w-100 mb-4" id="email" name ="email" placeholder="Email" ngModel required>
+      <input type="password" class="w-100 mb-4" id="password" name ="password" placeholder="Mot de passe" ngModel required>
+      <div class="d-flex mb-4">
+        <div class="a-1 cursor-pointer ml-auto" routerLink="/password_forgotten" >Mot de passe oublié ?</div>
+      </div>
+      <button type="submit" class="btn-2 mb-5" [disabled]="f.invalid">Valider</button>
+  </form>
+</div>
+<app-footer></app-footer>

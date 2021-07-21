@@ -1,0 +1,19 @@
+.main-footer{
+    background-color: #1c2c2a;
+}
+.footer-menu .list-group-item {
+    color: #fffff3;
+    background-color: inherit;
+    border: none;
+}
+.footer-menu .list-group-item a{
+    color: #fffff3;
+}
+.sociale-icon i{
+    font-size: 25px;
+    color: #fffff3;
+}
+.copyright p{
+    color: #fffff3;
+    font-size: small;
+}

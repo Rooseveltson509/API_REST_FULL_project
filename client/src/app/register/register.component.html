@@ -1,0 +1,175 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="w mx-auto">
+  <p class="t-1">S'inscrire</p>
+  <div class="d-flex" *ngIf="error">
+    <img class="icon mr-2" src="../assets/img/exclamation.png" alt="">
+    <p class="pa-3" >{{errorBody}}</p>
+  </div>
+  <p class="pa-1">Creez un compte pour pouvoir profiter de vos gains. </p>
+  <div class="mb-3">
+      <select
+          formControlName="gender"
+          class="w-100"
+          id="gender"
+          type="text"
+          [ngClass]="{'invalid-input' : f.gender.touched && f.gender.invalid}"
+          required>
+          <option value="" selected hidden disabled>Civilité *</option>
+          <option value="monsieur">Monsieur</option>
+          <option value="madame">Madame</option>
+      </select>
+      <div *ngIf="f.gender.touched && f.gender.invalid" class="pa-3 mt-1 ml-2">
+          <div *ngIf="f.gender.errors.required">Veuillez sélectionner votre gendre</div>
+      </div>
+  </div>
+
+  <div class="mb-3">
+      <input
+          formControlName="lastName"
+          class="w-100"
+          id="lastName"
+          type="text"
+          placeholder="Nom *"
+          [ngClass]="{'invalid-input' : f.lastName.touched && f.lastName.invalid}">
+      <div *ngIf="f.lastName.touched && f.lastName.invalid" class="pa-3 mt-1 ml-2">
+          <div *ngIf="f.lastName.errors.required">Le nom est obligatoire</div>
+          <div *ngIf="f.lastName.errors.minlength">Le nom doit contenir 4 caratères minimum</div>
+          <div *ngIf="f.lastName.errors.maxlength">Le nom doit contenir 50 caratères maximum</div>
+      </div>
+  </div>
+
+  <div class="mb-3">
+      <input
+          formControlName="firstName"
+          class="w-100"
+          id="firstName"
+          type="text"
+          placeholder="Prenom *"
+          [ngClass]="{'invalid-input' : f.firstName.touched && f.firstName.invalid}">
+      <div *ngIf="f.firstName.touched && f.firstName.invalid" class="pa-3 mt-1 ml-2">
+          <div *ngIf="f.firstName.errors.required">Le prénom est obligatoire</div>
+          <div *ngIf="f.firstName.errors.minlength">Le prénom doit contenir 4 caratères minimum</div>
+          <div *ngIf="f.firstName.errors.maxlength">Le prénom doit contenir 50 caratères maximum</div>
+      </div>
+  </div>
+  <div class="mb-3">
+      <input
+          formControlName="email"
+          class="w-100"
+          id="email"
+          type="email"
+          placeholder="Email *"
+          [ngClass]="{'invalid-input' : f.email.touched && f.email.invalid}">
+      <div *ngIf="f.email.touched && f.email.invalid" class="pa-3 mt-1 ml-2">
+          <div *ngIf="f.email.errors.required">L'email est obligatoire</div>
+          <div *ngIf="f.email.errors.email">Veuillez entrer une adresse email valide</div>
+      </div>
+  </div>
+  <div class="mb-3">
+      <input
+          formControlName="phone"
+          class="w-100"
+          id="phone"
+          type="phone"
+          placeholder="Phone"
+          [ngClass]="{'invalid-input' : f.phone.touched && f.phone.invalid}">
+      <div *ngIf="f.phone.touched && f.phone.invalid" class="pa-3 mt-1 ml-2">
+          <div *ngIf="f.phone.invalid">Le numéro de téléphone est invalide</div>
+      </div>
+  </div>
+  <div class="mb-3">
+      <input
+          formControlName="password"
+          id="password"
+          class="w-100"
+          type="password"
+          placeholder="Mot de passe *"
+          [ngClass]="{'invalid-input' : f.password.touched && f.password.invalid }">
+      <div *ngIf="f.password.touched && f.password.invalid" class="pa-3 mt-1 ml-2">
+          <div *ngIf="f.password.errors.required">Le mot de passe est obligatoire</div>
+          <div *ngIf="f.password.invalid">Le mot de passe doit contenir 8 charactères minimum : 1 lettre, 1 chiffre et 1 charactère spécial </div>
+      </div>
+  </div>
+  <div class="mb-3">
+      <input
+          formControlName="confPassword"
+          id="confPassword"
+          class="w-100"
+          type="password"
+          placeholder="Confirmation du mot de passe *"
+          [ngClass]="{'invalid-input' : f.confPassword.touched && f.confPassword.invalid }">
+      <div *ngIf="f.confPassword.touched && f.confPassword.invalid" class="pa-3 mt-1 ml-2">
+          <div *ngIf="f.confPassword.errors.required">Veuillez confirmer le mot de passe</div>
+          <div *ngIf="f.confPassword.errors.mustMatch">Les deux mots de passe ne sont pas identiques</div>
+      </div>
+  </div>
+  <div class="mb-3">
+      <input
+          formControlName="address"
+          id="address"
+          class="w-100"
+          type="text"
+          placeholder="Adresse *"
+          [ngClass]="{'invalid-input' : f.address.touched && f.address.invalid }">
+      <div *ngIf="f.address.touched && f.address.invalid" class="pa-3 mt-1 ml-2">
+          <div *ngIf="f.address.errors.required">Ce champs est obligatoire</div>
+      </div>
+  </div>
+  <div class="row no-gutters mb-3">
+    <div class="col g-1">
+      <div class="mb-3">
+          <input
+              formControlName="zip"
+              id="zip"
+              class="w-100"
+              type="text"
+              placeholder="Code postale *"
+              [ngClass]="{'invalid-input' : f.zip.touched && f.zip.invalid }">
+          <div *ngIf="f.zip.touched && f.zip.invalid" class="pa-3 mt-1">
+              <div *ngIf="f.zip.errors.required">Ce champs est obligatoire</div>
+          </div>
+      </div>
+    </div>
+    <div class="col g-1">
+      <div class="mb-3">
+          <input
+              formControlName="city"
+              id="city"
+              class="w-100"
+              type="text"
+              placeholder="Ville *"
+              [ngClass]="{'invalid-input' : f.city.touched && f.city.invalid }">
+          <div *ngIf="f.city.touched && f.city.invalid" class="pa-3 mt-1 ">
+              <div *ngIf="f.city.errors.required">Ce champs est obligatoire</div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex checkbox-div">
+    <div class="mb-3">
+        <input
+            formControlName="optin"
+            id="optin"
+            class="checkbox"
+            type="checkbox">
+    </div>
+    <div class="pa-2" >Oui, je souhaite recevoir les newsletters de TheTip Top informan des dernières nouveautés et des offres exclusives personnalisées par e-mail</div>
+  </div>
+  <div class="d-flex mb-3">
+    <div class="mb-3">
+        <input
+            formControlName="major"
+            id="major"
+            class="checkbox"
+            type="checkbox">
+        <div *ngIf="f.major.touched && f.major.invalid" class="pa-3 mt-1 w-100">
+            <div *ngIf="f.major.errors.required"> </div>
+        </div>
+    </div>
+    <div class="pa-2"
+         [ngClass]="{'pa-3' : f.major.touched && f.major.invalid }">
+        En créant mon compte, je confirme avoir plus de 16 ans et avoir pris connaissance de la politique de Données personnelles et cookies.*
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid" class="btn-2" >Créer mon compte</button>
+</form>

@@ -1,0 +1,49 @@
+.w{
+  width: 65%;
+}
+@media (max-width: 960px){
+  .w{
+    width: 55%;
+  }
+}
+
+@media (max-width: 720px){
+  .w{
+    width: 75%;
+  }
+}
+
+@media (max-width: 540px){
+  .w{
+    width: 90%;
+  }
+}
+
+.pa-1{
+  margin-bottom: 28px;
+}
+
+form {
+  margin-top: 61px;
+  margin-bottom: 40px;
+}
+
+select{
+  padding-top : 0;
+  padding-bottom : 0;
+  padding-left: 10px;
+}
+
+.checkbox-div{
+  margin-top: 22px;
+}
+.checkbox{
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+  color : red;
+}
+
+.invalid-checkbox{
+  border : red solid 1px;
+}

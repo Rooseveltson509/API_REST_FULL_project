@@ -1,0 +1,17 @@
+<div class="brd-top-1 brd-btm-1 h">
+  <form class= "w mx-auto" (ngSubmit)="onSubmit(f)" #f='ngForm'>
+      <p class="t-1">Simulateur de la caisse</p>
+      <p class="pa-1">Veuillez indiquer le montant de votre achat</p>
+      <input type="text" class="w-75" name="buyer" placeholder="Valeur d'achat" ngModel required>
+      <div class="d-flex">
+        <button type="submit" class="btn-2 mx-auto" [disabled]="f.invalid">Valider</button>
+      </div>
+  </form>
+  <div class="w mx-auto text-center mb-1" *ngIf="ticketCode != null">
+    <div class="t-2">
+      Votre code est : {{ticketCode}}
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

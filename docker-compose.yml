@@ -1,0 +1,45 @@
+version: "3"
+services:
+    client:
+        container_name: angular-app
+        image: angular-app
+        build:
+            context: client
+        stdin_open: true
+        ports: 
+            - "4200:4200"
+        networks: 
+            - tiptop-app
+    api-server:
+        container_name: api-server
+        image: api-server
+        build:
+            context: server
+        ports:
+            - "3000:3000"
+        depends_on: 
+            - database
+        networks: 
+            - tiptop-app
+    database:
+        image: mysql:5.7
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+        networks: 
+            - tiptop-app
+        volumes:
+            - database-data:/var/lib/mysql
+    nginx:
+        image: nginx
+        volumes:
+            - $PWD:/usr/share/nginx/html
+        ports:
+            - 5689:80
+networks: 
+    tiptop-app:
+        driver: bridge
+volumes:
+    database-data:
+        driver: local
