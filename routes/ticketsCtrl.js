@@ -199,6 +199,59 @@ module.exports = {
       });
   },
 
+    // Find User Ticket By store
+    getAllTicketsByStore: function (req, res) {
+      // Getting auth header
+      var headerAuth = req.headers["authorization"];
+      var userId = jwtUtils.getUserId(headerAuth);
+      var store = req.params.store;
+  
+      if (userId <= 0) {
+        return res.status(400).json({ error: "missing parameters" });
+      }
+  
+      models.Employe.findOne({
+        where: { id: userId },
+      })
+        .then(function (employe) {
+          if (employe) {
+            models.Ticket.findAll({
+              attributes: ["userId", "gain", "etat", "magasin"],
+              where: { magasin: store },
+              include: [
+                {
+                  model: models.User,
+                  attributes: [
+                    "id",
+                    "first_name",
+                    "last_name",
+                    "email",
+                    "city",
+                    "address",
+                    "zipCode",
+                  ],
+                },
+              ],
+            })
+              .then(function (ticket) {
+                if (ticket) {
+                  return res.status(200).json(ticket);
+                } else {
+                  return res.status(404).json({ error: "Store not found." });
+                }
+              })
+              .catch(function (err) {
+                res.status(404).json({ error: "cannot fetch Ticket." });
+              });
+          } else {
+            return res.status(404).json({ error: "Accès non autorisé....." });
+          }
+        })
+        .catch(function (err) {
+          res.status(500).json({ error: "cannot fetch Ticket..." });
+        });
+    },
+
   // Find all Tickets from user
   getAllTicketsFromUser: function (req, res) {
     // Getting auth header

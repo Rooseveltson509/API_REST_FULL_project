@@ -25,7 +25,7 @@ exports.checkPrice = function(price) {
     return PRICE_REGEX.test(price)
 }
 
-let allowlist = ['http://localhost:3000/', 'http://localhost', 'http://localhost:3000']
+let allowlist = ['http://localhost:3000/', 'http://localhost', 'http://localhost:3000', 'http://localhost:4200']
 exports.corsOptionsDelegate = function(req, callback) {
     let corsOptions;
     if (allowlist.indexOf(req.header('Origin')) !== -1) {

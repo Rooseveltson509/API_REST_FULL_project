@@ -42,6 +42,7 @@ exports.router = (function() {
     apiRouter.route('/ticket/create/', cors(corsOption.corsOptionsDelegate)).post(ticketCtrl.createTicketForUser);
     apiRouter.route('/ticket/:code', cors(corsOption.corsOptionsDelegate)).get(ticketCtrl.getTicketByCode);
     apiRouter.route('/user/tickets', cors(corsOption.corsOptionsDelegate)).get(ticketCtrl.getAllTicketsFromUser);
+    apiRouter.route('/user/tickets/:store', cors(corsOption.corsOptionsDelegate)).get(ticketCtrl.getAllTicketsByStore);
     //2- Tickets routes(/employe/)
     apiRouter.route('/employee/pwd/me', cors(corsOption.corsOptionsDelegate)).put(employeCtrl.updateEmployeePassword);
     apiRouter.route('/employe/ticket/:code', cors(corsOption.corsOptionsDelegate)).get(employeCtrl.assignedTicketForUser);
