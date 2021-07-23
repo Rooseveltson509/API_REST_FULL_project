@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Employe } from '../models/Employe';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from '../../environments/environment';
+
 
 
 @Component({
@@ -22,8 +24,8 @@ export class AdminModifyEmpComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-     
-    // var url = "http://localhost:3000/api/v1/user/me";
+
+    // var url = "api/user/me";
     // this.user$ = this.httpClient.get<User>(url);
     // this.httpClient
     // .get<User>(url)
@@ -39,7 +41,7 @@ export class AdminModifyEmpComponent implements OnInit {
   }
 
   onSubmitInfos(form : NgForm){
-    const url = 'http://localhost:3000/api/v1/user/admin/employe/';
+    const url = environment.apiUrl+'/user/admin/employe/';
     const id = this.route.snapshot.paramMap.get('id_emp') ;
     var send =true;
 
@@ -65,7 +67,7 @@ export class AdminModifyEmpComponent implements OnInit {
   }
 
   onSubmitPassword(form : NgForm){
-    const url = 'http://localhost:3000/api/v1/user/admin/employe/';
+    const url = environment.apiUrl+'/user/admin/employe/';
     const id = this.route.snapshot.paramMap.get('id_emp') ;
     var send =true;
 

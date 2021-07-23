@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/User';
+import { environment } from '../../environments/environment';
+
 
 export interface Stat {
   gain: string;
@@ -18,8 +20,9 @@ export interface Stat {
 export class AdminHomeComponent implements OnInit {
 
   @Input() users$ : Observable<User>;
-  stat : any ;
-  stat3 : any ;
+  stat : any;
+  stat3 : any;
+
   constructor(
     private httpClient : HttpClient
   ) { }
@@ -28,19 +31,19 @@ export class AdminHomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    var urlUsers = "http://localhost:3000/api/v1/admin/users";
+    var urlUsers = environment.apiUrl+"/admin/users";
     this.users$ = this.httpClient.get<User>(urlUsers);
 
-    var url = "http://localhost:3000/api/v1/admin/tickets/";
-    var url2 = "http://localhost:3000/api/v1/admin/tickets/remaining";
-    var url3 = "http://localhost:3000/api/v1/admin/tickets/gains";
+    var url = environment.apiUrl+"/admin/tickets/";
+    var url2 = environment.apiUrl+"/admin/tickets/remaining";
+    var url3 = environment.apiUrl+"/admin/tickets/gains";
     this.stats$= this.httpClient.get<Stat>(url2);
 
     this.httpClient
     .get(url)
     .toPromise()
     .then(
-      (res) => {
+      (res ) => {
         this.stat = res;
       },
       (error) => {

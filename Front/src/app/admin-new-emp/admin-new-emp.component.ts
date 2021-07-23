@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { HttpClient, HttpErrorResponse, HttpParams, HttpHeaders } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-admin-new-emp',
@@ -24,7 +26,7 @@ export class AdminNewEmpComponent implements OnInit {
   }
 
   onSubmit(form : NgForm){
-    const url = 'http://localhost:3000/api/v1/admin/employe/new';
+    const url = environment.apiUrl+'/admin/employe/new';
     var send =true;
     if(form.value.password!=form.value.confPassword){
       this.confPasswordError=true;

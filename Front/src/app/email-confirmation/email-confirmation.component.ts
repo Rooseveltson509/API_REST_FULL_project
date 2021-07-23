@@ -6,6 +6,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-email-confirmation',
@@ -32,7 +34,7 @@ export class EmailConfirmationComponent implements OnInit {
   }
 
   onSubmit(){
-    const url = "http://localhost:3000/api/v1//user/mailValidation/";
+    const url = environment.apiUrl+"/user/mailValidation/";
     const id = this.route.snapshot.paramMap.get('id') ;
     const body  = {
       token: this.form.value.token,

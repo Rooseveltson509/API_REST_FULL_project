@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { TicketCode } from '../models/TicketCode';
+import { environment } from '../../environments/environment';
+
 
 
 @Component({
@@ -24,7 +26,7 @@ export class SimulateurCaisseComponent implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    var url = "http://localhost:3000/api/v1/ticket/create/";
+    var url = environment.apiUrl+"/ticket/create/";
     var body = {
       buyer : form.value.buyer
     }

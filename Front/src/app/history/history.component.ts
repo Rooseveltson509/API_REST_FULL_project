@@ -3,6 +3,8 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 
 import { Ticket } from "../models/Ticket";
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-history',
@@ -50,7 +52,7 @@ export class HistoryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    var url = "http://localhost:3000/api/v1/user/tickets/";
+    var url = environment.apiUrl+"/user/tickets/";
     this.tickets$ = this.httpClient.get<Ticket[]>(url);
   }
 

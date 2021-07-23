@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-admin-login',
@@ -33,7 +35,7 @@ export class AdminLoginComponent implements OnInit {
   }
 
   submit(){
-    const url = 'http://localhost:3000/api/v1/user/login/';
+    const url = environment.apiUrl+'/user/login/';
     const body  = {
       email: this.form.value.email,
       password: this.form.value.password,
@@ -105,7 +107,7 @@ export class AdminLoginComponent implements OnInit {
 //   }
 //
 //   onSubmit (form : NgForm){
-//     const url = 'http://localhost:3000/api/v1/user/login/';
+//     const url = environment.apiUrl+'/user/login/';
 //     var send =true;
 //
 //     if (send==true){
