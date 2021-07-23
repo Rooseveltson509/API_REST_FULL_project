@@ -4,6 +4,8 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { PopUpComponent } from '../pop-up/pop-up.component';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-forget-password',
@@ -30,7 +32,7 @@ export class ForgetPasswordComponent implements OnInit {
   }
 
   submit (){
-    const url = 'http://localhost:3000/api/v1/user/forget';
+    const url = environment.apiUrl+'/user/forget';
     const body  = {
       email: this.form.value.email,
     }

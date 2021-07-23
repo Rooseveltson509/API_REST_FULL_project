@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
+
 
 
 
@@ -24,7 +26,7 @@ export class EmpLoginComponent implements OnInit {
   }
 
   onSubmit (form : NgForm){
-    const url = 'http://localhost:3000/api/v1/employe/login/';
+    const url = environment.apiUrl+'/employe/login/';
     var send =true;
 
     if (send==true){

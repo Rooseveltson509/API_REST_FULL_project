@@ -7,6 +7,8 @@ import { Employe } from '../models/Employe';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
 import { PopUpDeleteComponent } from '../pop-up-delete/pop-up-delete.component';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-list-emp',
@@ -34,7 +36,7 @@ export class ListEmpComponent implements OnInit {
 
 
     ngOnInit(): void {
-    var url = "http://localhost:3000/api/v1/admin/employees";
+    var url = environment.apiUrl+"/admin/employees";
     this.employes$ = this.httpClient.get<Employe>(url);
   }
 
@@ -67,7 +69,7 @@ export class ListEmpComponent implements OnInit {
   }
 
   confirmDeleteEmploye(){
-    var url = 'http://localhost:3000/api/v1/employe/admin/';
+    var url = 'api/employe/admin/';
     this.httpClient
     .delete(url+this.email )
     .toPromise()
@@ -102,7 +104,7 @@ export class ListEmpComponent implements OnInit {
     // this.listEmployes =true;
   }
   onSubmitEmail(form : NgForm){
-    var url = 'http://localhost:3000/api/v1/user/admin/employe/';
+    var url = 'api/user/admin/employe/';
     const body  = {
       nom: this.employe.nom,
       prenom: this.employe.prenom,
@@ -134,7 +136,7 @@ export class ListEmpComponent implements OnInit {
 
 
   onSubmitInfos(form : NgForm) {
-    var url = 'http://localhost:3000/api/v1/user/admin/employe/';
+    var url = 'api/user/admin/employe/';
     const body  = {
         nom: form.value.nom,
         prenom: form.value.prenom,

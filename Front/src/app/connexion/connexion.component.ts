@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-connexion',
@@ -33,7 +34,7 @@ export class ConnexionComponent implements OnInit {
   }
 
   submit(){
-    const url = 'http://localhost:3000/api/v1/user/login/';
+    const url = environment.apiUrl+'/user/login/';
     const body  = {
       email: this.form.value.cEmail,
       password: this.form.value.cPassword,
@@ -43,12 +44,21 @@ export class ConnexionComponent implements OnInit {
       .toPromise()
       .then(
         (res : any) => {
-          this.authService.setLoggedInStatus(true);
-          this.authService.setUserId(res.userId);
-          this.authService.setEmail(res.email);
-          this.authService.setToken(res.token);
-          this.authService.setRole('user');
-          this.router.navigate(['client_home']);
+          if (res.role=='admin'){
+            this.authService.setLoggedInStatus(true);
+            this.authService.setUserId(res.userId);
+            this.authService.setEmail(res.email);
+            this.authService.setToken(res.token);
+            this.authService.setRole('admin');
+            this.router.navigate(['admin_home']);
+          }else{
+            this.authService.setLoggedInStatus(true);
+            this.authService.setUserId(res.userId);
+            this.authService.setEmail(res.email);
+            this.authService.setToken(res.token);
+            this.authService.setRole('user');
+            this.router.navigate(['client_home']);
+          }
         },
         (error) => {
           this.error =true;

@@ -8,6 +8,8 @@ import { AuthService } from '../services/auth.service';
 import { Ticket } from "../models/Ticket";
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-emp-home',
@@ -25,16 +27,16 @@ export class EmpHomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    var url = "http://localhost:3000/api/v1/user/me";
+    var url = environment.apiUrl+"/user/me";
     this.emp$ = this.httpClient.get<Employe>(url);
   }
 
   onSubmitSearch(form : NgForm){
-    var url = "http://localhost:3000/api/v1/ticket/";
+    var url = environment.apiUrl+"/ticket/";
     this.ticket$ = this.httpClient.get<Ticket>(url+form.value.code);
   }
   onAssigne(code : string){
-      var url='http://localhost:3000/api/v1/employe/ticket/';
+      var url=environment.apiUrl+'/employe/ticket/';
       this.httpClient
       .get(url+code)
       .toPromise()

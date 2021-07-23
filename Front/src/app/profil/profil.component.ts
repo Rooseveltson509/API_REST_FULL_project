@@ -9,6 +9,8 @@ import { AuthService } from '../services/auth.service';
 import { FormGroup, FormControl, Validators, ValidatorFn, ValidationErrors } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-profil',
@@ -28,7 +30,7 @@ export class ProfilComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    var url = "http://localhost:3000/api/v1/user/me";
+    var url = environment.apiUrl+"/user/me";
     this.user$ = this.httpClient.get<User>(url);
   }
 
@@ -77,7 +79,7 @@ export class ProfilComponent implements OnInit {
 
 
   onSubmitInfos(form : NgForm){
-    const url = 'http://localhost:3000/api/v1/user/me';
+    const url = 'api/user/me';
     var send =true;
 
     if (send==true){
@@ -104,7 +106,7 @@ export class ProfilComponent implements OnInit {
   }
 
   onSubmitEmail(form : NgForm){
-    const url = 'http://localhost:3000/api/v1/user/email';
+    const url = 'api/user/email';
     var send =true;
 
     if (send==true){
@@ -127,7 +129,7 @@ export class ProfilComponent implements OnInit {
   }
 
   onSubmitPassword(form : NgForm){
-    const url = 'http://localhost:3000/api/v1/user/me';
+    const url = 'api/user/me';
     var send =true;
 
     if (send==true){
@@ -151,7 +153,7 @@ export class ProfilComponent implements OnInit {
   }
 
   submitInfos(){
-    const url = 'http://localhost:3000/api/v1/user/me';
+    const url = 'api/user/me';
 
       const body  = {
           nom: this.formInfos.value.lastName,
@@ -182,7 +184,7 @@ export class ProfilComponent implements OnInit {
   }
 
   submitPassword(){
-    const url = 'http://localhost:3000/api/v1/user/pwd/me';
+    const url = 'api/user/pwd/me';
     var send =true;
 
     if (send==true){

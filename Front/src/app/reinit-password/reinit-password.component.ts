@@ -5,6 +5,8 @@ import { FormGroup, FormControl, Validators, ValidatorFn, ValidationErrors } fro
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
+
 
 
 @Component({
@@ -52,7 +54,7 @@ export class ReinitPasswordComponent implements OnInit {
   }
 
   submit (){
-    const url = 'http://localhost:3000/api/v1/user/restpwd/';
+    const url = environment.apiUrl+'/user/restpwd/';
     const id = this.route.snapshot.paramMap.get('id') ;
     const token = this.route.snapshot.paramMap.get('token') ;
     const body  = {

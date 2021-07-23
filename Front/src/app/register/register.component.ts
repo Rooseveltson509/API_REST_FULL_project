@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { PopUpComponent } from '../pop-up/pop-up.component';
+import { environment } from '../../environments/environment';
+
 
 @Component({
   selector: 'app-register',
@@ -64,7 +66,7 @@ export class RegisterComponent implements OnInit {
   }
 
   submit(){
-    const url = 'http://localhost:3000/api/v1/user/register/';
+    const url = environment.apiUrl+'/user/register/';
     var optin ='';
     if (this.form.value.optin) {
       optin='yes';

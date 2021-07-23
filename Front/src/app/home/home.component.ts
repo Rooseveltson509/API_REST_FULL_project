@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/User';
 import { Ticket } from "../models/Ticket";
+import { environment } from '../../environments/environment';
+
 
 
 @Component({
@@ -20,7 +22,7 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    var url = "http://localhost:3000/api/v1/user/me";
+    var url = environment.apiUrl+"/user/me";
     this.user$ = this.httpClient.get<User>(url);
   }
 
